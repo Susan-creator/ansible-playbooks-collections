@@ -1,0 +1,16 @@
+galaxy_info:
+  author: "susan owoicho"                                      # Your name
+  description: "An Ansible role to install and configure Apache HTTPD on Linux servers."  # Meaningful description
+  company: "Example Corp"                                     # Your company name, can be removed if not applicable
+
+  license: "MIT"                                              # Valid license from SPDX
+
+  min_ansible_version: "2.9"                                 # Minimum Ansible version required
+
+  galaxy_tags:                                               # Relevant tags
+    - "apache"
+    - "httpd"
+    - "webserver"
+    - "linux"
+
+dependencies: []                                            # List of dependencies, empty if none

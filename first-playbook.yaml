@@ -1,0 +1,6 @@
+---
+- name: Install and configure Apache HTTPD on all hosts  # This is the play's name
+  hosts: all
+  become: true
+  roles:
+    - httpd  # The role's tasks will have their own names within the role definition

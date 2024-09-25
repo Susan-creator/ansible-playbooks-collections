@@ -1,0 +1,20 @@
+---
+- name: Provisioning EC2 instances
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Create EC2 instances
+      amazon.aws.ec2_instance:
+        name: "{{ item.name }}"
+        key_name: "ansible-key"
+        instance_type: t2.micro
+        security_group: default
+        network_interfaces:
+          - assign_public_ip: true
+        image_id: "{{ item.image }}"
+        region: us-east-1  # Ensure the correct region is specified
+      loop:
+        - { image: 'ami-0e86e20dae9224db8', name: 'managed-node1' }
+        - { image: 'ami-0e86e20dae9224db8', name: 'managed-node2' }
+        - { image: 'ami-0ebfd941bbafe70c6', name: 'managed-node3' }
